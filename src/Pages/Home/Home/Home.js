@@ -6,7 +6,7 @@ import Blog_Contact from '../Blog_Contact/Blog_Contact';
 
 const Home = () => {
     return (
-        <div>
+        <div style={{marginTop: '-50px'}}>
             <Banner></Banner> 
             <Products></Products>
             <Blog_Contact></Blog_Contact>
