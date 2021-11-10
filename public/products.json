@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Mercedes-Benz",
+        "price": "1364",
+        "details": "Since 1886, Mercedes-Benz has been around and doing wonders with technology and its tremendous output amongst all the other automobile companies. This car brand has always set the bar high for the other automobile companies, by consistently being on the top with its car sales and manufactures. It has always been said and proven to buy this car brand that they have a history of making a successful history. This automobile company has always paved a path with regards to satisfying its customers without compromising its performance and by bringing in various eco-friendly cars.",
+        "img": "https://i.ibb.co/Kj3S9WQ/1.jpg"
+    },
+    {
+        "name": "Tesla",
+        "price": "4365",
+        "details": "Tesla, the revolutionary battery company, is best known for its electric cars. The company is also popularly known for specializing in cutting-edge solar panel innovation and Lithium-ion battery technology.The company first started to get noticed in 2008 after the release of the Tesla Roadster, the world’s first true-electric sports car. The Model S, a sedan followed the Roadster and has since become one of the world’s best-selling plug-in electric cars. The Tesla Model 3, as of 2019, is the world’s most popular plug-in electric vehicle.",
+        "img": "https://i.ibb.co/HPC41c8/2.jpg"
+    },
+    {
+        "name": "BMW",
+        "price": "5346",
+        "details": "With Franz Joseph Popp as its founding father, BMW has always set its marks as the most reliable car brand in the whole automobile industry. With a wide range of innovative vehicle model, this car brand has always been known for its reliability and luxury status. This automobile company has always served its customers with luxurious piloting on the roads, while making sure that comfort has been served, from its passenger vehicles to its SUV, it would always be a great ride.",
+        "img": "https://i.ibb.co/GcSRk9V/3.jpg"
+    },
+    {
+        "name": "Rolls Royce",
+        "price": "5236",
+        "details": "When we talk about luxury with exquisite grace, Rolls Royce would always come to our mind, it has always been the major celebrity choice to buy from this automobile company and experiencing the taste of elite travelling. While the other brands are focused on just technology, this card brand focuses on innovative measures to mix both traditional and technological aspects to keep the model simple yet classy. This brand caters to provide utmost comfort to its driver and its traveller. This automobile company uses pure material in order to bring the realness in the car making it even more special and not at all fake.",
+        "img": "https://i.ibb.co/NKxPkG6/4.jpg"
+    },
+    {
+        "name": "Bentley",
+        "price": "4632",
+        "details": "With offering a lavish blend of classic British charm with the modern technology, Bentley as a car brand has its compelling features with high-end speed and muscular power, while providing a lush look to the outer and inner structure of all the vehicles this car brand has manufactured till date. Bentley offers a wide range of vehicles and now have launched its very own SUV ‘Bentley Bentayga’ coming in 2021, with its wide features focusing on the speed, power, technology and not to forget luxury.",
+        "img": "https://i.ibb.co/wRSB0Hw/5.jpg"
+    },
+    {
+        "name": "Bugatti",
+        "price": "4364",
+        "details": "With the establishment of Chiron, Bugatti has marked its way of being under the top car brands in and around the globe with elite status. This automobile company has made the most exclusive and the most innovative sports car which was ever introduced in the techno-waved world. With a speed wide tested and loved by its passengers, this car has been equipped with well-established safety kits.",
+        "img": "https://i.ibb.co/DWXpZLx/6.jpg"
+    },
+    {
+        "name": "Porsche 911",
+        "price": "4632",
+        "details": "Being the world’s largest race car manufacturer, Porsche has been in the car brand league since 1931. This Germany based automobile company, they have made vehicles which would give a set class experience of an SUV with also giving the touch experience of being a sports car. With the up-to-date overall design of the car model, this brand had embarked with the rough yet smooth race track driving experience. It is one of the best compact- luxury car manufacturing automobile company, which made its mark in the sports car hall of fame with establishing the legendary 911.",
+        "img": "https://i.ibb.co/hyVXSQD/7.jpg"
+    },
+    {
+        "name": "Lexus",
+        "price": "4632",
+        "details": "Lexus is one of those car brands which has received the most awards amongst all the automobile companies. Lexus has always been a prominent car brand which has fairly served its purpose with good quality, speed and comfort. This car brand is successfully known for its high resale value. Many customers have claimed that Lexus makes eco-friendly vehicles which are long-lasting and reliable. The vehicles manufactured are fuel-efficient making it even more reliable for its buyers.",
+        "img": "https://i.ibb.co/Wsyr6Pk/8.jpg"
+    }
+]

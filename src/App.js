@@ -11,7 +11,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
-import Products from './Pages/Home/Products/Products';
+import AllCar from './Pages/Home/AllCar/AllCar';
 
 
 function App() {
@@ -29,8 +29,8 @@ function App() {
               <Home />
             </Route>
 
-            <Route path="/products">
-              <Products />
+            <Route path="/allcar">
+              <AllCar />
             </Route>
 
             <Route path="/login">
