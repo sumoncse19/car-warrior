@@ -7,7 +7,7 @@ const Footer = () => {
     const footerBg = blueGrey[800]
 
     return (
-        <Box sx={{ backgroundColor: footerBg, color:'white', pt: 5}} style={{marginTop: '-60px'}}>
+        <Box sx={{ backgroundColor: footerBg, color:'white', pt: 5}}>
             <Container>
                 <Grid container spacing={2} sx={{py: 7 }}>
                     <Grid item xs={6} md={3}>
@@ -41,7 +41,7 @@ const Footer = () => {
                     </Grid>
                     <Grid item xs={6} md={3}>
                         <Typography variant='h6' sx={{ textAlign: 'left', color: 'yellow'}}>
-                            Subscribe
+                            Subscribe <br />
                             <TextField
                                 required
                                 id="outlined-required"

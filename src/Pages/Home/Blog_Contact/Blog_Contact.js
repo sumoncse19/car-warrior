@@ -18,7 +18,7 @@ const Blog_Contact = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('./blog.json')
+        fetch('http://localhost:5000/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data));
     }, [])

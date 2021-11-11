@@ -12,6 +12,8 @@ import Register from './Pages/Login/Register/Register';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
 import AllCar from './Pages/Home/AllCar/AllCar';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Purchase from './Pages/Purchase/Purchase';
 
 
 function App() {
@@ -29,16 +31,20 @@ function App() {
               <Home />
             </Route>
 
-            <Route path="/allcar">
+            <Route exact path="/allcar">
               <AllCar />
             </Route>
 
-            <Route path="/login">
+            <Route exact path="/login">
               <Login />
             </Route>
 
-            <Route path="/register">
+            <Route exact path="/register">
               <Register />
+            </Route>
+
+            <Route exact path='/allcar/:purchase'>
+              <Purchase></Purchase>
             </Route>
           </Switch>
         </Router>

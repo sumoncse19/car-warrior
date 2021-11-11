@@ -15,15 +15,15 @@ const Reviews = () => {
     const [reviews, setReviews] = React.useState([])
 
     React.useEffect(() => {
-        fetch('./review.json')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
     },[])
     return (
-        <Container>
-            <Box>
-                <Card sx={{ px: 3, backgroundColor: 'gray', position: 'relative', zIndex: '1'}}>
-                    <Typography variant='h6' sx={{my: 3}}>
+        <Box style={{ marginBottom: '-60px' }}>
+            <Container>
+                <Card sx={{ px: 3, backgroundColor: 'gray', position: 'relative', zIndex: '1' }}>
+                    <Typography variant='h6' sx={{ my: 3 }}>
                         OUR REVIEW SECTION
                     </Typography>
 
@@ -66,8 +66,8 @@ const Reviews = () => {
                         ...
                     </Swiper>
                 </Card>
-            </Box>
-        </Container>
+            </Container>
+        </Box>
     );
 };
 
