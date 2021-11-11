@@ -23,14 +23,14 @@ const Blog_Contact = () => {
             .then(data => setBlogs(data));
     }, [])
     return (
-        <Box sx={{ display: 'block', my: 5 }}>
+        <Box sx={{ my: 5, height: '650px'}}>
             <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
                 OUR BLOG & CONTACT
             </Typography>
-            <Container sx={{ flexGrow: 1, my: 5 }}>
+            <Container sx={{ flexGrow: 1, my: 13 }}>
                 <Grid container spacing={2}>
                     <Grid item style={{ ...verticalCenter, textAlign: 'left' }} xs={12} md={6}>
-                        <Paper style={{ maxHeight: 400, overflow: 'auto', backgroundColor: '#424242', paddingTop: '10px' }}>
+                        <Paper style={{ maxHeight: 570, overflow: 'auto', backgroundColor: '#424242', paddingTop: '10px' }} sx={{mt: 6}}>
                             <Typography variant='h6' align='center' color='white'>
                                 OUR BLOG
                             </Typography>
@@ -61,8 +61,8 @@ const Blog_Contact = () => {
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={12} md={4} style={verticalCenter} sx={{ ml: 15 }}>
-                        <Card sx={{ maxWidth: 345 }}>
+                    <Grid item xs={12} md={4} style={verticalCenter} sx={{ ml: 12, mt: 3 }}>
+                        <Card sx={{ maxWidth: 350 }}>
                             <CardHeader
                                 avatar={
                                     <img src='https://i.ibb.co/X57DqxQ/logo.jpg' style={{ width: '50px', borderRadius: '50%'}}/>
@@ -81,11 +81,22 @@ const Blog_Contact = () => {
                                 image="https://i.ytimg.com/vi/fgZbQlZLCCk/maxresdefault.jpg"
                                 alt="Paella dish"
                             />
-                            <CardContent>
-                                <Typography variant="body2" color="text.secondary">
+                            <CardContent sx={{ textAlign: 'left' }}>
+                                <Typography variant="p">
                                     This impressive paella is a perfect party dish and a fun meal to cook
                                     together with your guests. Add 1 cup of frozen peas along with the mussels,
                                     if you like.
+                                </Typography>
+                                <Typography variant='body2' color="text.secondary" sx={{my: 1}}>
+                                    <span style={{ fontWeight:'bold'}}>Address:</span> Chittagong, Bangladesh
+                                </Typography>
+
+                                <Typography variant='body2' color="text.secondary" sx={{ my: 1 }}>
+                                    <span style={{ fontWeight: 'bold' }}>Phone:</span> +123 456 789
+                                </Typography>
+
+                                <Typography variant='body2' color="text.secondary" sx={{ my: 1 }}>
+                                    <span style={{ fontWeight: 'bold' }}>Email:</span> carwarrior@gmail.com
                                 </Typography>
                             </CardContent>
                             <CardActions disableSpacing>
