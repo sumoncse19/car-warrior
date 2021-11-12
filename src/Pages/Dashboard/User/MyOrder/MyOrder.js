@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Button } from '@mui/material';
 
 const MyOrder = () => {
 
@@ -20,6 +20,24 @@ const MyOrder = () => {
             .then(res => res.json())
             .then(data => setMyOrders(data));
     }, [])
+
+    const handleDelete = id => {
+        const url = `http://localhost:5000/orders/${id}`;
+        fetch(url, {
+            method: 'DELETE'
+        }, [])
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    alert('Deleted Successfully');
+                    window.location.reload();
+                    const remaining = myOrders.filter(order => order._id !== id);
+                    setMyOrders(remaining);
+                }
+            })
+    }
+
     return (
         <Container sx={{mb: 3}}>
             <Typography variant='h6'>Your All Order</Typography>
@@ -30,6 +48,7 @@ const MyOrder = () => {
                             <TableCell>Product Name</TableCell>
                             <TableCell align="right">Email</TableCell>
                             <TableCell align="right">Address</TableCell>
+                            <TableCell align="right">Status</TableCell>
                             <TableCell align="right">Action</TableCell>
                         </TableRow>
                     </TableHead>
@@ -45,8 +64,8 @@ const MyOrder = () => {
                                 </TableCell>
                                 <TableCell align="right">{row.email}</TableCell>
                                 <TableCell align="right">{row.address}</TableCell>
-                                <TableCell align="right">{row.carbs}</TableCell>
-
+                                <TableCell align="right">{row.status}</TableCell>
+                                <Button variant='contained' onClick={() => handleDelete(row._id)} className="btn bg-danger p-2 ms-3">Delete</Button>
                             </TableRow>
                         ))}
                     </TableBody>

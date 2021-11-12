@@ -19,6 +19,7 @@ import ManageOrder from './Pages/Dashboard/Admin/ManageOrder/ManageOrder';
 import AddProduct from './Pages/Dashboard/Admin/AddProduct/AddProduct';
 import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
 import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
+import UpdateOrderStatus from './Pages/Dashboard/Admin/ManageOrder/UpdateOrderStatus';
 
 function App() {
   return (
@@ -51,20 +52,24 @@ function App() {
               <Purchase></Purchase>
             </Route>
 
-            <Route exact path="/myOrders">
+            <PrivateRoute exact path="/myOrders">
               <MyOrder></MyOrder>
-            </Route>
+            </PrivateRoute>
 
-            <Route exact path="/manageOrders">
+            <AdminRoute exact path="/manageOrders">
               <ManageOrder></ManageOrder>
-            </Route>
+            </AdminRoute>
 
-            <Route exact path="/addProduct">
+            <AdminRoute exact path="/addProduct">
               <AddProduct></AddProduct>
-            </Route>
+            </AdminRoute>
 
             <AdminRoute exact path="/makeAdmin">
               <MakeAdmin></MakeAdmin>
+            </AdminRoute>
+
+            <AdminRoute exact path="/allOrder/updateStatus/:id">
+              <UpdateOrderStatus></UpdateOrderStatus>
             </AdminRoute>
           </Switch>
         </Router>

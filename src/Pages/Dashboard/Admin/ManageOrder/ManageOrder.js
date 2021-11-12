@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { Container, Typography } from '@mui/material';
+import { Table } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
-const ManageOrder = () => {
+const ManageOrders = () => {
 
-    const [orders, setOrders] = useState([]);
+    const [orders, setOrders] = useState([])
+    const [products, setProducts] = useState({ status: 'Accept' });
 
     useEffect(() => {
         fetch('http://localhost:5000/orders')
@@ -18,39 +14,58 @@ const ManageOrder = () => {
             .then(data => setOrders(data));
     }, [])
 
+
+    const handleDelete = id => {
+        const url = `http://localhost:5000/orders/${id}`;
+        fetch(url, {
+            method: 'DELETE'
+        }, [])
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    alert('Deleted Successfully');
+                    window.location.reload();
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining);
+                }
+            })
+    }
+
     return (
-        <Container sx={{ mb: 3 }}>
-            <Typography variant='h6'>All Order</Typography>
-            <TableContainer component={Paper}>
-                <Table sx={{}} aria-label="Appointments table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Product Name</TableCell>
-                            <TableCell align="right">Email</TableCell>
-                            <TableCell align="right">Address</TableCell>
-                            <TableCell align="right">Action</TableCell>
-                        </TableRow>
-                    </TableHead>
+        <div className='container'>
+            <h2>All Orders{orders.length}</h2>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Serial</th>
+                        <th>Product Name</th>
+                        <th>Email</th>
+                        <th>Customer Name</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                {orders?.map((pd, index) => (
+                    <tbody>
+                        <tr>
+                            <td>{index + 1}</td>
+                            <td>{pd?.productName}</td>
+                            <td>{pd?.email}</td>
+                            <td>{pd?.customerName}</td>
+                            <td>{pd?.address}</td>
 
-                    <TableBody>
-                        {orders.map((row) => (
-                            <TableRow
-                                key={row._id}
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                            >
-                                <TableCell component="th" scope="row">
-                                    {row.productName}
-                                </TableCell>
-                                <TableCell align="right">{row.email}</TableCell>
-                                <TableCell align="right">{row.address}</TableCell>
-                                <TableCell align="right">{row.carbs}</TableCell>
+                            <Link to={`allOrder/updateStatus/${pd._id}`}><Button sx={{ textDecoration: 'none'}} variant='contained'>{pd?.status || 'Pending'}</Button></Link>
 
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </Container>
+                            <Button onClick={() => handleDelete(pd._id)} className="btn bg-danger p-2 ms-3">Delete</Button>
+
+                        </tr>
+                    </tbody>
+                ))}
+            </Table>
+
+        </div>
     );
 };
-export default ManageOrder;
+
+export default ManageOrders;

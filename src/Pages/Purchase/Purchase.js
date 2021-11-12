@@ -38,8 +38,10 @@ const Purchase = () => {
     }
 
     const handlePurchaseSubmit = e => {
+
         const purchase = {
             ...purchaseInfo,
+            status: 'Pending'
         }
 
         fetch('http://localhost:5000/purchases', {
