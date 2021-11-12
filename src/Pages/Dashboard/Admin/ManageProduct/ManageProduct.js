@@ -58,7 +58,7 @@ const ManageProduct = () => {
                                 </Typography>
                             </CardContent>
                             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-                                <Link to={`/manageProduct/update/${car._id}`}>
+                                <Link style={{ textDecoration: 'none' }} to={`/manageProduct/update/${car._id}`}>
                                     <Button variant='contained'>Update</Button>
                                 </Link>
                                 

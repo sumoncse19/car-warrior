@@ -28,6 +28,17 @@ import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import HomeIcon from '@mui/icons-material/Home';
+import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PaymentIcon from '@mui/icons-material/Payment';
+import ReviewsIcon from '@mui/icons-material/Reviews';
+import LogoutIcon from '@mui/icons-material/Logout';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import WifiProtectedSetupIcon from '@mui/icons-material/WifiProtectedSetup';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import LoginIcon from '@mui/icons-material/Login';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 import useAuth from '../../../hooks/useAuth';
 import './Navigation.css'
 import { blueGrey } from '@mui/material/colors';
@@ -230,16 +241,37 @@ const Navigation = () => {
                 <p>Notifications</p>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
-                <IconButton
-                    size="large"
-                    aria-label="account of current user"
-                    aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
-                <p>Profile</p>
+                {
+                    user?.photoURL
+                        ?
+                        <div style={{display: 'flex'}}>
+                            <div>
+                                <img onClick={handleProfileMenuOpen} src={user.photoURL} style={{ height: '40px', width: '40px', marginLeft: '10px', borderRadius: '50%' }} alt="" />
+                            </div>
+                            <div style={{ marginTop: '12px', marginLeft: '3px' }}>
+                                <p>{user.displayName}</p>
+                            </div>
+                        </div>
+                        :
+                        <div style={{display: 'flex'}}>
+                            <div>
+                                <IconButton
+                                    size="large"
+                                    edge="end"
+                                    aria-label="account of current user"
+                                    aria-controls={menuId}
+                                    aria-haspopup="true"
+                                    onClick={handleProfileMenuOpen}
+                                    color="inherit"
+                                >
+                                    <AccountCircle />
+                                </IconButton>
+                            </div>
+                            <div style={{ marginTop: '12px', marginLeft: '3px' }}>
+                                <p>Profile</p>
+                            </div>
+                        </div>
+                }
             </MenuItem>
         </Menu>
     );
@@ -365,35 +397,35 @@ const Navigation = () => {
                         <List sx={{ background: drawerBg }}>
                             <ListItem button key='MyOrder' onClick={handleDrawerClose}>
                                 <Link to='/myOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><ShoppingCartIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='MY ORDER'></ListItemText>
                                 </Link>
                             </ListItem>
                             
                             <ListItem button key='ManageOrder' onClick={handleDrawerClose}>
                                 <Link to='/manageOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><ManageAccountsIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='MANAGE ORDER'></ListItemText>
                                 </Link>
                             </ListItem>
 
                             <ListItem button key='AddProduct' onClick={handleDrawerClose}>
                                 <Link to='/addProduct' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><AddCircleIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='ADD PRODUCT'></ListItemText>
                                 </Link>
                             </ListItem>
 
                             <ListItem button key='ManageProduct' onClick={handleDrawerClose}>
                                 <Link to='/manageProduct' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><WifiProtectedSetupIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='MANAGE PRODUCT'></ListItemText>
                                 </Link>
                             </ListItem>
 
                             <ListItem button key='MakeAdmin' onClick={handleDrawerClose}>
                                 <Link to='/makeAdmin' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><AdminPanelSettingsIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='MAKE ADMIN'></ListItemText>
                                 </Link>
                             </ListItem>
@@ -409,14 +441,14 @@ const Navigation = () => {
 
                             <ListItem button key='AllCar' onClick={handleDrawerClose}>
                                 <Link to='/allcar' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><HomeIcon /> </ListItemIcon>
+                                    <ListItemIcon><DirectionsCarFilledIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='ALL CAR'></ListItemText>
                                 </Link>
                             </ListItem>
 
                             <ListItem button key='MyOrder' onClick={handleDrawerClose}>
                                 <Link to='/myOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><ShoppingCartIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='MY ORDER'></ListItemText>
                                 </Link>
                             </ListItem>
@@ -426,37 +458,38 @@ const Navigation = () => {
                 {
                     user.email ?
                         <List sx={{ background: drawerBg }}>
-                            <ListItem button key='LogOut' onClick={logOut}>
-                                <ListItemIcon><ScheduleIcon /> </ListItemIcon>
-                                <ListItemText style={{ marginTop: 0 }} primary='LOG OUT'></ListItemText>
-                            </ListItem>
 
                             <ListItem button key='Payment' onClick={handleDrawerClose}>
                                 <Link to='/payment' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><PaymentIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='PAYMENT'></ListItemText>
                                 </Link>
                             </ListItem>
 
                             <ListItem button key='Review' onClick={handleDrawerClose}>
                                 <Link to='/review' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><ReviewsIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='REVIEW'></ListItemText>
                                 </Link>
+                            </ListItem>
+
+                            <ListItem button key='LogOut' onClick={logOut}>
+                                <ListItemIcon><LogoutIcon /> </ListItemIcon>
+                                <ListItemText style={{ marginTop: 0 }} primary='LOG OUT'></ListItemText>
                             </ListItem>
                         </List>
                         :
                         <List sx={{ background: drawerBg }}>
                             <ListItem button key='Login' onClick={handleDrawerClose}>
                                 <Link to='/login' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><LoginIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='LOGIN'></ListItemText>
                                 </Link>
                             </ListItem>
 
                             <ListItem button key='Registration' onClick={handleDrawerClose}>
                                 <Link to='/register' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemIcon><HowToRegIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='REGISTRATION'></ListItemText>
                                 </Link>
                             </ListItem>

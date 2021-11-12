@@ -27,10 +27,10 @@ const Blog_Contact = () => {
             <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
                 OUR BLOG & CONTACT
             </Typography>
-            <Container sx={{ flexGrow: 1, my: 13 }}>
+            <Container sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
-                    <Grid item style={{ ...verticalCenter, textAlign: 'left' }} xs={12} md={6}>
-                        <Paper style={{ maxHeight: 570, overflow: 'auto', backgroundColor: '#424242', paddingTop: '10px' }} sx={{mt: 6}}>
+                    <Grid item sx={{ my: 5}} style={{ textAlign: 'left' }} xs={12} md={6}>
+                        <Paper style={{ maxHeight: 570, overflow: 'auto', backgroundColor: '#424242', paddingTop: '10px' }}>
                             <Typography variant='h6' align='center' color='white'>
                                 OUR BLOG
                             </Typography>
@@ -61,8 +61,8 @@ const Blog_Contact = () => {
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={12} md={4} style={verticalCenter} sx={{ ml: 12, mt: 3 }}>
-                        <Card sx={{ maxWidth: 350 }}>
+                    <Grid item xs={12} md={4} sx={{ ml: 12, my: 5 }}>
+                        <Card sx={{ maxWidth: 350, mx: 'auto' }}>
                             <CardHeader
                                 avatar={
                                     <img src='https://i.ibb.co/X57DqxQ/logo.jpg' style={{ width: '50px', borderRadius: '50%'}}/>

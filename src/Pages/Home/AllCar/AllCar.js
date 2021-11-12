@@ -49,7 +49,7 @@ const AllCar = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions sx={{ mb: 2, ms: 2 }}>
-                                        <Link to={`/allcar/${car._id}`}>
+                                        <Link style={{textDecoration: 'none'}} to={`/allcar/${car._id}`}>
                                             <Button variant="contained" size="small" color='success'>Purchase Now</Button>
                                         </Link>
                                         <Button size="small" sx={{ color: '#ff5722', fontWeight: 500 }}>Learn More...</Button>

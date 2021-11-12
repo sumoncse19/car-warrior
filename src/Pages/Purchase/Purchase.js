@@ -83,7 +83,7 @@ const Purchase = () => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Link to='/allcar' style={{ width: '100%', mx: 'auto' }}>
+                    <Link to='/allcar' style={{ width: '100%', mx: 'auto', textDecoration: 'none' }}>
                         <Button
                             variant='contained'color='primary' size="small"
                         >Show All Cars</Button>

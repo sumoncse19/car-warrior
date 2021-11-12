@@ -64,9 +64,11 @@ const ManageOrders = () => {
                             <td>{pd?.customerName}</td>
                             <td>{pd?.address}</td>
 
-                            <Link to={`allOrder/updateStatus/${pd._id}`}><Button sx={{ textDecoration: 'none'}} variant='contained'>{pd?.status || 'Pending'}</Button></Link>
+                            <Link style={{textDecoration: 'none'}} to={`allOrder/updateStatus/${pd._id}`}>
+                                <Button variant='contained'>{pd?.status || 'Pending'}</Button>
+                            </Link>
 
-                            <Button onClick={() => handleDelete(pd._id)} className="btn bg-danger p-2 ms-3">Delete</Button>
+                            <Button onClick={() => handleDelete(pd._id)} underline="none" variant='contained' color='error' sx={{mt:1}}>Delete</Button>
 
                         </tr>
                     </tbody>
