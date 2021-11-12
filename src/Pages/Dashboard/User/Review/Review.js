@@ -33,7 +33,7 @@ const Review = () => {
     return (
         <Box className="container add-product">
             <Box className="card my-5 py-5 shadow">
-                <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
+                <Typography variant='h4' color='primary.main' sx={{ fontWeight: 'bold' }}>
                     GIVE US A REVIEW
                 </Typography>
                 <hr className='w-25 mx-auto mb-5' />
@@ -46,7 +46,7 @@ const Review = () => {
 
                     <input hidden type="text" {...register("img")} placeholder={user.photoURL} defaultValue={user.photoURL} /> <br />
 
-                    <Button variant='contained' type="submit">Submit</Button> <br />
+                    <Button variant='contained' color='success' type="submit">Submit</Button> <br />
                 </form>
             </Box>
         </Box>

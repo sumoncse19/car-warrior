@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ReadMoreIcon from '@mui/icons-material/ReadMore';
 
 const Products = () => {
 
@@ -25,7 +27,7 @@ const Products = () => {
                     {
                         cars.map(car => 
                             <Grid key={car._id} item xs={4} sm={4} md={4}>
-                                <Card sx={{ maxWidth: 345, height: '100%', backgroundColor: '#e0e0e0' }}>
+                                <Card sx={{ maxWidth: 345, height: '100%', backgroundColor: '#e0e0e0', mx: 'auto' }}>
                                     <CardMedia
                                         component='img'
                                         height="140"
@@ -44,10 +46,11 @@ const Products = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions sx={{ mb: 2, ms: 2 }}>
-                                        <Link style={{textDecoration: 'none'}} to={`/allcar/${car._id}`}>
-                                            <Button variant="contained" size="small" color='success'>Purchase Now</Button>
+                                        <Link style={{ textDecoration: 'none' }} to={`/allcar/${car._id}`}>
+                                            <Button variant="contained" size="small" color='success'
+                                            ><ShoppingCartIcon />Purchase Now</Button>
                                         </Link>
-                                        <Button size="small" sx={{ color: '#ff5722', fontWeight: 500 }}>Learn More...</Button>
+                                        <Button size="small" sx={{ color: '#ff5722', fontWeight: 500 }}><ReadMoreIcon />Learn More...</Button>
                                     </CardActions>
                                 </Card>
                             </Grid>

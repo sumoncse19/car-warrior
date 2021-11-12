@@ -43,7 +43,7 @@ const Blog_Contact = () => {
                                                     {blog.title}
                                                 </Typography>
                                                 <Typography variant="subtitle1" color="text.secondary" component="div">
-                                                    {blog.details.slice(0, 70)}...
+                                                    {blog.details.slice(0, 100)}...
                                                 </Typography>
                                             </CardContent>
                                             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>

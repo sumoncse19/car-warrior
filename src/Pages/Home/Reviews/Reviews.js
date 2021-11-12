@@ -11,7 +11,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box, Container } from '@mui/material';
 import StarRatings from 'react-star-ratings';
-import { PausePresentationTwoTone } from '@material-ui/icons';
 
 const Reviews = () => {
     const [reviews, setReviews] = React.useState([])

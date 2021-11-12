@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Alert, Button, TextField, Box } from '@mui/material';
+import { Alert, Button, TextField, Box, Typography } from '@mui/material';
 import useAuth from '../../../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import HomeIcon from '@mui/icons-material/Home';
 
 const MakeAdmin = () => {
     const location = useLocation();
@@ -40,23 +42,27 @@ const MakeAdmin = () => {
     }
     return (
         <div style={{ height: '50vh' }}>
-            <h2>Make an Admin</h2>
+            <Typography variant='h5' color='success.main' sx={{fontWeight: 700}}>
+                Make an Admin
+            </Typography>
             <form onSubmit={handleAdminSubmit}>
+                {
+                    success && <Alert severity='success' sx={{width: '25%', mx: 'auto'}}>Maid Admin Successfully!!</Alert>
+                }
                 <TextField
                     sx={{ width: '50%' }}
                     label="Email"
                     type="email"
+                    color='success'
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <Button type='submit' variant='contained'>Make Admin</Button>
+                <Button type='submit' variant='contained'><AdminPanelSettingsIcon /> Make Admin</Button>
             </form>
-            {success &&
-                <Box>
-                    <Alert severity='success'>Maid Admin Successfully!!</Alert>
-                    <Link to='/'>
-                        <Button variant='contained' color='success'>Go To HOME</Button>
-                    </Link>
-                </Box>
+            {
+                success &&
+                <Link style={{textDecoration: 'none'}} to='/'>
+                    <Button variant='contained' color='success' sx={{ mt: 5 }}><HomeIcon />Go To HOME</Button>
+                </Link>
             }
         </div>
     );
