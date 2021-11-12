@@ -122,7 +122,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Navigation = () => {
 
-    const { user, logOut } = useAuth();
+    const { user, admin, logOut } = useAuth();
 
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -179,9 +179,6 @@ const Navigation = () => {
                 user?.email ?
                     <Box>
                         <MenuItem onClick={logOut}>Logout</MenuItem>
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/dashboard'>
-                            <Button style={{ color: 'black' }}>Dashboard</Button>
-                        </NavLink>
                     </Box>
                     :
                     <Box>
@@ -363,39 +360,63 @@ const Navigation = () => {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List sx={{ background: drawerBg}}>
-                    <ListItem button key='Home'>
-                        <Link to='/home' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                            <ListItemIcon><HomeIcon /> </ListItemIcon>
-                            <ListItemText style={{ marginTop: 0 }} primary='HOME'></ListItemText>
-                        </Link>
-                    </ListItem>
+                
+                {
+                    user.email && admin ?
+                        <List sx={{ background: drawerBg }}>
+                            <ListItem button key='MyOrder' onClick={handleDrawerClose}>
+                                <Link to='/myOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='MY ORDER'></ListItemText>
+                                </Link>
+                            </ListItem>
+                            
+                            <ListItem button key='ManageOrder' onClick={handleDrawerClose}>
+                                <Link to='/manageOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='MANAGE ORDER'></ListItemText>
+                                </Link>
+                            </ListItem>
 
-                    <ListItem button key='Appointment'>
-                        <Link to='/appointment' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                            <ListItemIcon><ScheduleIcon /> </ListItemIcon>
-                            <ListItemText style={{ marginTop: 0 }} primary='APPOINTMENT'></ListItemText>
-                        </Link>
-                    </ListItem>
+                            <ListItem button key='AddProduct' onClick={handleDrawerClose}>
+                                <Link to='/addProduct' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='ADD PRODUCT'></ListItemText>
+                                </Link>
+                            </ListItem>
 
-                    <ListItem button key='Appointment'>
-                        <Link to='/appointment' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                            <ListItemIcon><ScheduleIcon /> </ListItemIcon>
-                            <ListItemText style={{ marginTop: 0 }} primary='Appointment'></ListItemText>
-                        </Link>
-                    </ListItem>
-                </List>
-                <Divider />
-                <List sx={{ background: drawerBg }}>
-                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
+                            <ListItem button key='MakeAdmin' onClick={handleDrawerClose}>
+                                <Link to='/makeAdmin' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='MAKE ADMIN'></ListItemText>
+                                </Link>
+                            </ListItem>
+                        </List>
+                        :
+                        <List sx={{ background: drawerBg }}>
+                            <ListItem button key='Home' onClick={handleDrawerClose}>
+                                <Link to='/home' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><HomeIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='HOME'></ListItemText>
+                                </Link>
+                            </ListItem>
+
+                            <ListItem button key='AllCar' onClick={handleDrawerClose}>
+                                <Link to='/allcar' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><HomeIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='ALL CAR'></ListItemText>
+                                </Link>
+                            </ListItem>
+
+                            <ListItem button key='MyOrder' onClick={handleDrawerClose}>
+                                <Link to='/myOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='MY ORDER'></ListItemText>
+                                </Link>
+                            </ListItem>
+                        </List>
+                }
+                
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />

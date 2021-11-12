@@ -14,7 +14,11 @@ import Footer from './Pages/Shared/Footer/Footer';
 import AllCar from './Pages/Home/AllCar/AllCar';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Purchase from './Pages/Purchase/Purchase';
-
+import MyOrder from './Pages/Dashboard/User/MyOrder/MyOrder';
+import ManageOrder from './Pages/Dashboard/Admin/ManageOrder/ManageOrder';
+import AddProduct from './Pages/Dashboard/Admin/AddProduct/AddProduct';
+import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -46,6 +50,22 @@ function App() {
             <Route exact path='/allcar/:purchase'>
               <Purchase></Purchase>
             </Route>
+
+            <Route exact path="/myOrders">
+              <MyOrder></MyOrder>
+            </Route>
+
+            <Route exact path="/manageOrders">
+              <ManageOrder></ManageOrder>
+            </Route>
+
+            <Route exact path="/addProduct">
+              <AddProduct></AddProduct>
+            </Route>
+
+            <AdminRoute exact path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
+            </AdminRoute>
           </Switch>
         </Router>
         <Footer></Footer>

@@ -88,14 +88,14 @@ const Purchase = () => {
                 </Typography>
                 <form onSubmit={handlePurchaseSubmit}>
                     <TextField
-                        
                         sx={{ width: '90%', m: 1 }}
-                        label={cars.name}
+                        label='For Surety type here your purchase car name properly'
                         id="outlined-size-small"
                         name='productName'
                         onBlur={handleOnBlur}
-                        defaultValue={cars.name}
+                        defaultValue = {cars.name}
                         size="small"
+                        required
                     />
 
                     <TextField
