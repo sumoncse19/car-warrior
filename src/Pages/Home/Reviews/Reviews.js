@@ -10,6 +10,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box, Container } from '@mui/material';
+import StarRatings from 'react-star-ratings';
+import { PausePresentationTwoTone } from '@material-ui/icons';
 
 const Reviews = () => {
     const [reviews, setReviews] = React.useState([])
@@ -40,7 +42,7 @@ const Reviews = () => {
                         {
                             reviews.map(review =>
                                 <SwiperSlide>
-                                    <Card sx={{ maxWidth: 345, height: '100%' }}>
+                                    <Card sx={{ maxWidth: 345, height: 330 }}>
                                         <CardMedia
                                             component="img"
                                             height="140"
@@ -52,12 +54,17 @@ const Reviews = () => {
                                                 {review.name}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {review.review.slice(0, 110)}
+                                                {review.review.slice(0, 90)}
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small">Share</Button>
-                                            <Button size="small">Learn More</Button>
+                                            <Button size="small" sx={{ mr: 3 }}>Rating: {parseFloat(review.rating)}</Button>
+                                            <StarRatings
+                                                rating={parseFloat(review.rating)}
+                                                starDimension="15px"
+                                                starSpacing="0px"
+                                                starRatedColor="blue"
+                                            />
                                         </CardActions>
                                     </Card>
                                 </SwiperSlide>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -11,6 +11,11 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Purchase = () => {
+
+    const location = useLocation();
+    const history = useHistory();
+
+    const redirect_url = location.state?.from || '/myOrders';
 
     const { purchase } = useParams();
 
@@ -53,17 +58,17 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.inserteId) {
-                
+                if (data.insertedId) {
+                    history.push(redirect_url);
+                    alert('Purchase Successfully!!');
                 }
-                alert('Purchase Successfully!!');
             })
         e.preventDefault();
     }
     
     return (
         <Container>
-            <Card sx={{my: 2, py: 2}}>
+            <Card sx={{my: 2, py: 2, width: '90%', mx: 'auto'}}>
                 <CardMedia
                     component="img"
                     image={cars.img}
@@ -78,8 +83,10 @@ const Purchase = () => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Link to='/allcar'>
-                        <Button variant='contained' color='primary' size="small">Show All Cars</Button>
+                    <Link to='/allcar' style={{ width: '100%', mx: 'auto' }}>
+                        <Button
+                            variant='contained'color='primary' size="small"
+                        >Show All Cars</Button>
                     </Link>
                 </CardActions>
             </Card>

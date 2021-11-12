@@ -20,6 +20,10 @@ import AddProduct from './Pages/Dashboard/Admin/AddProduct/AddProduct';
 import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
 import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 import UpdateOrderStatus from './Pages/Dashboard/Admin/ManageOrder/UpdateOrderStatus';
+import Payment from './Pages/Dashboard/User/Payment/Payment';
+import Review from './Pages/Dashboard/User/Review/Review';
+import ManageProduct from './Pages/Dashboard/Admin/ManageProduct/ManageProduct';
+import UpdateProduct from './Pages/Dashboard/Admin/ManageProduct/UpdateProduct/UpdateProduct';
 
 function App() {
   return (
@@ -48,12 +52,20 @@ function App() {
               <Register />
             </Route>
 
-            <Route exact path='/allcar/:purchase'>
+            <PrivateRoute exact path='/allcar/:purchase'>
               <Purchase></Purchase>
-            </Route>
+            </PrivateRoute>
 
             <PrivateRoute exact path="/myOrders">
               <MyOrder></MyOrder>
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/payment">
+              <Payment></Payment>
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/review">
+              <Review></Review>
             </PrivateRoute>
 
             <AdminRoute exact path="/manageOrders">
@@ -64,12 +76,20 @@ function App() {
               <AddProduct></AddProduct>
             </AdminRoute>
 
-            <AdminRoute exact path="/makeAdmin">
-              <MakeAdmin></MakeAdmin>
-            </AdminRoute>
-
             <AdminRoute exact path="/allOrder/updateStatus/:id">
               <UpdateOrderStatus></UpdateOrderStatus>
+            </AdminRoute>
+
+            <AdminRoute exact path="/manageProduct">
+              <ManageProduct></ManageProduct>
+            </AdminRoute>
+
+            <AdminRoute exact path="/manageProduct/update/:id">
+              <UpdateProduct></UpdateProduct>
+            </AdminRoute>
+
+            <AdminRoute exact path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
             </AdminRoute>
           </Switch>
         </Router>

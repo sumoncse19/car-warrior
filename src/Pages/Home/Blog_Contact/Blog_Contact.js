@@ -23,7 +23,7 @@ const Blog_Contact = () => {
             .then(data => setBlogs(data));
     }, [])
     return (
-        <Box sx={{ my: 5, height: '650px'}}>
+        <Box sx={{ my: 5, pb: 5}}>
             <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
                 OUR BLOG & CONTACT
             </Typography>

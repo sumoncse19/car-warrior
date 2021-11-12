@@ -21,7 +21,6 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
@@ -336,13 +335,13 @@ const Navigation = () => {
                     "& .MuiDrawer-paper": {
                         width: drawerWidth,
                         boxSizing: "border-box"
-                    }
+                    },
                 }}
                 variant="persistent"
                 anchor="left"
                 open={open}
             >
-                <DrawerHeader sx={{ p: 0, ml: 0, background: drawerBg, }}>
+                <DrawerHeader sx={{ p: 0, ml: 0, background: drawerBg }}>
                     {
                         user?.photoURL && <img src={user.photoURL} alt="" style={{ height: '50px', width: '50px', borderRadius: '50%' }} />
                     }
@@ -385,6 +384,13 @@ const Navigation = () => {
                                 </Link>
                             </ListItem>
 
+                            <ListItem button key='ManageProduct' onClick={handleDrawerClose}>
+                                <Link to='/manageProduct' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='MANAGE PRODUCT'></ListItemText>
+                                </Link>
+                            </ListItem>
+
                             <ListItem button key='MakeAdmin' onClick={handleDrawerClose}>
                                 <Link to='/makeAdmin' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
                                     <ListItemIcon><ScheduleIcon /> </ListItemIcon>
@@ -412,6 +418,46 @@ const Navigation = () => {
                                 <Link to='/myOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
                                     <ListItemIcon><ScheduleIcon /> </ListItemIcon>
                                     <ListItemText style={{ marginTop: 0 }} primary='MY ORDER'></ListItemText>
+                                </Link>
+                            </ListItem>
+                        </List>
+                }
+
+                {
+                    user.email ?
+                        <List sx={{ background: drawerBg }}>
+                            <ListItem button key='LogOut' onClick={logOut}>
+                                <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                <ListItemText style={{ marginTop: 0 }} primary='LOG OUT'></ListItemText>
+                            </ListItem>
+
+                            <ListItem button key='Payment' onClick={handleDrawerClose}>
+                                <Link to='/payment' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='PAYMENT'></ListItemText>
+                                </Link>
+                            </ListItem>
+
+                            <ListItem button key='Review' onClick={handleDrawerClose}>
+                                <Link to='/review' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='REVIEW'></ListItemText>
+                                </Link>
+                            </ListItem>
+                        </List>
+                        :
+                        <List sx={{ background: drawerBg }}>
+                            <ListItem button key='Login' onClick={handleDrawerClose}>
+                                <Link to='/login' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='LOGIN'></ListItemText>
+                                </Link>
+                            </ListItem>
+
+                            <ListItem button key='Registration' onClick={handleDrawerClose}>
+                                <Link to='/register' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                                    <ListItemIcon><ScheduleIcon /> </ListItemIcon>
+                                    <ListItemText style={{ marginTop: 0 }} primary='REGISTRATION'></ListItemText>
                                 </Link>
                             </ListItem>
                         </List>

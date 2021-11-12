@@ -13,7 +13,7 @@ const Products = () => {
     },[])
 
     return (
-        <Box sx={{ flexGrow: 1, display: 'block' }}>
+        <Box sx={{ flexGrow: 1, display: 'block', mx: 'auto' }}>
             <Container>
                 <Typography sx={{ fontWeight: 500, m: 2, color: 'success.main' }} variant="h6" component="div">
                     OUR CAR

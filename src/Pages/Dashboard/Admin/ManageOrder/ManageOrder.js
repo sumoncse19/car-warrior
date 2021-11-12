@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Table } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import { useHistory, useLocation } from 'react-router';
 
 const ManageOrders = () => {
 
+    const location = useLocation();
+    const history = useHistory();
+
+    const redirect_url = location.state?.from || '/manageOrders';
+
     const [orders, setOrders] = useState([])
-    const [products, setProducts] = useState({ status: 'Accept' });
 
     useEffect(() => {
         fetch('http://localhost:5000/orders')
@@ -16,20 +21,24 @@ const ManageOrders = () => {
 
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/orders/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        }, [])
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    alert('Deleted Successfully');
-                    window.location.reload();
-                    const remaining = orders.filter(order => order._id !== id);
-                    setOrders(remaining);
-                }
-            })
+        const confirmation = window.confirm('Do you want to delete?');
+
+        if (confirmation == true) {
+            const url = `http://localhost:5000/orders/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            }, [])
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        alert('Deleted Successfully');
+                        history.push(redirect_url);
+                        const remaining = orders.filter(order => order._id !== id);
+                        setOrders(remaining);
+                    }
+                })
+        }
     }
 
     return (

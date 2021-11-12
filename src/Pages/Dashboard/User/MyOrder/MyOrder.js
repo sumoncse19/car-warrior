@@ -22,20 +22,24 @@ const MyOrder = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/orders/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        }, [])
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    alert('Deleted Successfully');
-                    window.location.reload();
-                    const remaining = myOrders.filter(order => order._id !== id);
-                    setMyOrders(remaining);
-                }
-            })
+        const confirmation = window.confirm('Do you want to delete?');
+
+        if (confirmation == true) {
+            const url = `http://localhost:5000/orders/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            }, [])
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        alert('Deleted Successfully');
+                        window.location.reload();
+                        const remaining = myOrders.filter(order => order._id !== id);
+                        setMyOrders(remaining);
+                    }
+                })
+        }
     }
 
     return (
