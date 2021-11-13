@@ -400,6 +400,22 @@ const Navigation = () => {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
+
+                <List sx={{background: drawerBg}}>
+                    <ListItem button key='Home' onClick={handleDrawerClose}>
+                        <Link to='/home' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                            <ListItemIcon><HomeIcon /> </ListItemIcon>
+                            <ListItemText style={{ marginTop: 0 }} primary='HOME'></ListItemText>
+                        </Link>
+                    </ListItem>
+
+                    <ListItem button key='AllCar' onClick={handleDrawerClose}>
+                        <Link to='/allcar' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
+                            <ListItemIcon><DirectionsCarFilledIcon /> </ListItemIcon>
+                            <ListItemText style={{ marginTop: 0 }} primary='ALL CAR'></ListItemText>
+                        </Link>
+                    </ListItem>
+                </List>
                 
                 {
                     user.email && admin ?
@@ -441,20 +457,6 @@ const Navigation = () => {
                         </List>
                         :
                         <List sx={{ background: drawerBg }}>
-                            <ListItem button key='Home' onClick={handleDrawerClose}>
-                                <Link to='/home' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><HomeIcon /> </ListItemIcon>
-                                    <ListItemText style={{ marginTop: 0 }} primary='HOME'></ListItemText>
-                                </Link>
-                            </ListItem>
-
-                            <ListItem button key='AllCar' onClick={handleDrawerClose}>
-                                <Link to='/allcar' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
-                                    <ListItemIcon><DirectionsCarFilledIcon /> </ListItemIcon>
-                                    <ListItemText style={{ marginTop: 0 }} primary='ALL CAR'></ListItemText>
-                                </Link>
-                            </ListItem>
-
                             <ListItem button key='MyOrder' onClick={handleDrawerClose}>
                                 <Link to='/myOrders' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
                                     <ListItemIcon><ShoppingCartIcon /> </ListItemIcon>

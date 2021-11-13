@@ -41,9 +41,9 @@ const MakeAdmin = () => {
         e.preventDefault();
     }
     return (
-        <div style={{ height: '50vh' }}>
+        <Box style={{ height: '50vh' }}>
             <Typography variant='h5' color='success.main' sx={{fontWeight: 700}}>
-                Make an Admin
+                <AdminPanelSettingsIcon />Make an Admin
             </Typography>
             <form onSubmit={handleAdminSubmit}>
                 {
@@ -64,7 +64,7 @@ const MakeAdmin = () => {
                     <Button variant='contained' color='success' sx={{ mt: 5 }}><HomeIcon />Go To HOME</Button>
                 </Link>
             }
-        </div>
+        </Box>
     );
 };
 
