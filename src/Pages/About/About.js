@@ -34,7 +34,7 @@ const About = () => {
 
             <Container sx={{mt: 3}}>
                 <Typography align='center' variant='h5' sx={{fontWeight: '600'}}>A Sample Video of Our Collection!!</Typography>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/iaxH6R7cnUs?start=64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe className='w-75' height="315" src="https://www.youtube.com/embed/iaxH6R7cnUs?start=64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </Container>
 
             <Container sx={{ mt: 4 }}>
