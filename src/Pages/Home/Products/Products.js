@@ -17,10 +17,7 @@ const Products = () => {
     return (
         <Box sx={{ flexGrow: 1, display: 'block', mx: 'auto' }}>
             <Container>
-                <Typography sx={{ fontWeight: 500, m: 2, color: 'success.main' }} variant="h6" component="div">
-                    OUR CAR
-                </Typography>
-                <Typography sx={{ fontWeight: 600, m: 3 }} variant="h4" component="div">
+                <Typography sx={{ fontWeight: 600, m: 3 }} variant="h4" color='secondary' component="div">
                     OUR AWESOME CAR
                 </Typography>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ overflow: 'auto' }}>
@@ -50,7 +47,7 @@ const Products = () => {
                                             <Button variant="contained" size="small" color='success'
                                             ><ShoppingCartIcon />Purchase Now</Button>
                                         </Link>
-                                        <Button size="small" sx={{ color: '#ff5722', fontWeight: 500 }}><ReadMoreIcon />Learn More...</Button>
+                                        <Button size="small" sx={{ color: '#ff5722', fontWeight: 500 }}><ReadMoreIcon />Read More...</Button>
                                     </CardActions>
                                 </Card>
                             </Grid>

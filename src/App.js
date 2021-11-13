@@ -24,6 +24,7 @@ import Payment from './Pages/Dashboard/User/Payment/Payment';
 import Review from './Pages/Dashboard/User/Review/Review';
 import ManageProduct from './Pages/Dashboard/Admin/ManageProduct/ManageProduct';
 import UpdateProduct from './Pages/Dashboard/Admin/ManageProduct/UpdateProduct/UpdateProduct';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -91,6 +92,10 @@ function App() {
             <AdminRoute exact path="/makeAdmin">
               <MakeAdmin></MakeAdmin>
             </AdminRoute>
+
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
         <Footer></Footer>

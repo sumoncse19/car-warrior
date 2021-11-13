@@ -24,27 +24,24 @@ const Reviews = () => {
         <Box style={{ marginBottom: '-60px' }}>
             <Container>
                 <Card sx={{ px: 3, backgroundColor: 'gray', position: 'relative', zIndex: '1' }}>
-                    <Typography variant='h6' sx={{ my: 3 }}>
+                    <Typography variant='h6' color='#ffeb3b' sx={{ my: 3, fontWeight: 'bold' }}>
                         OUR REVIEW SECTION
                     </Typography>
 
                     <Swiper
-                        // install Swiper modules
                         modules={[Pagination, Scrollbar, A11y]}
                         spaceBetween={50}
-                        slidesPerView={3}
+                        slidesPerView={2}
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
-                        // onSwiper={(swiper) => console.log(swiper)}
-                        // onSlideChange={() => console.log('slide change')}
                     >
                         {
                             reviews.map(review =>
-                                <SwiperSlide>
-                                    <Card sx={{ maxWidth: 345, height: 330 }}>
+                                <SwiperSlide key={review._id}>
+                                    <Card sx={{ maxWidth: 345, mx: 'auto', height: '400px' }}>
                                         <CardMedia
                                             component="img"
-                                            height="140"
+                                            height="200"
                                             image={review.img}
                                             alt="green iguana"
                                         />

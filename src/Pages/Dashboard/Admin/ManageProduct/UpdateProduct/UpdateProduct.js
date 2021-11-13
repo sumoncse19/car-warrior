@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router';
+import { Container, Typography } from '@mui/material';
 
 const UpdateProduct = () => {
 
@@ -50,8 +51,8 @@ const UpdateProduct = () => {
     }
 
     return (
-        <div className='container'>
-            <h2>The Product of: {product.name}</h2>
+        <Container sx={{my: 2}}>
+            <Typography variant='h5' color='#1b5e20' sx={{fontWeight: 600}}>The Product of: {product.name}</Typography>
 
             <form onSubmit={handleUpdateProduct}>
                 <label className='my-2 mx-3'>Name</label>
@@ -62,7 +63,7 @@ const UpdateProduct = () => {
 
                 <input className='btn btn-success mx-2' type="submit" value="Update" />
             </form>
-        </div>
+        </Container>
     );
 };
 

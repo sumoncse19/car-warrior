@@ -1,6 +1,8 @@
 import { Container, Grid, TextField, Typography, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import GoogleIcon from '@mui/icons-material/Google';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 
 import useAuth from '../../../hooks/useAuth';
 
@@ -31,8 +33,11 @@ const Login = () => {
     return (
         <Container>
             <Grid container spacing={2}>
+                <Grid item xs={12} md={6}>
+                    <img style={{ width: '100%' }} src='https://i.ibb.co/MB7QNp6/3094352.jpg' alt="" />
+                </Grid>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
-                    <Typography variant="body1" gutterBottom>
+                    <Typography variant="h6" color='green' sx={{fontWeight: 600}} gutterBottom>
                         Login
                     </Typography>
                     <form onSubmit={handleLoginSubmit}>
@@ -40,6 +45,7 @@ const Login = () => {
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic" label="Your Email"
                             name="email"
+                            color='success'
                             onChange={handleOnChange}
                             variant="standard" />
                         <TextField
@@ -47,14 +53,15 @@ const Login = () => {
                             id="standard-basic" label="Your Password"
                             type='password'
                             name="password"
+                            color='success'
                             onChange={handleOnChange}
                             variant="standard" />
                         <Button
-                            sx={{ width: '75%', m: 1 }} variant='contained'
+                            sx={{ width: '75%', m: 1 }} variant='contained' color='success'
                             type='submit'
-                        >Login</Button>
+                        ><VpnKeyIcon />Login</Button>
                         <NavLink style={{ textDecoration: 'none' }} to='/register'>
-                            <Button variant='text'>
+                            <Button variant='text' color='secondary'>
                                 New User? Please Register
                             </Button>
                         </NavLink>
@@ -67,12 +74,9 @@ const Login = () => {
                         }
                     </form>
                     <p>----------------------------</p>
-                    <Button variant='contained' onClick={handleGoogleSignIn}>
-                        Sign in with Google
+                    <Button sx={{mb: 2}} variant='contained' onClick={handleGoogleSignIn}>
+                        <GoogleIcon sx={{color: 'orange'}}/>Sign in with Google
                     </Button>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    {/* <img style={{ width: '100%' }} src={} alt="" /> */}
                 </Grid>
             </Grid>
         </Container>

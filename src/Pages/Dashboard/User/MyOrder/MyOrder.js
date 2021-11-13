@@ -46,7 +46,7 @@ const MyOrder = () => {
         <Container sx={{mb: 3}}>
             <Typography variant='h6'>Your All Order</Typography>
             <TableContainer component={Paper}>
-                <Table sx={{}} aria-label="Appointments table">
+                <Table aria-label="Appointments table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Product Name</TableCell>

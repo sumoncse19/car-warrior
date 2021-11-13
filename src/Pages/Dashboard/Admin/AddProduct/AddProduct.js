@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Box, Button, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import { useHistory, useLocation } from 'react-router';
+import { Container } from 'react-bootstrap';
+import SendIcon from '@mui/icons-material/Send';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import './AddProduct.css'
 
 const AddProduct = () => {
 
@@ -39,26 +43,30 @@ const AddProduct = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/products/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    alert('Deleted Successfully');
-                    window.location.reload();
-                    const remaining = cars.filter(tour => tour._id !== id);
-                    setCars(remaining);
-                }
+        const confirmation = window.confirm('Do you want to delete?');
+
+        if (confirmation == true) {
+            const url = `http://localhost:5000/products/${id}`;
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        alert('Deleted Successfully');
+                        window.location.reload();
+                        const remaining = cars.filter(tour => tour._id !== id);
+                        setCars(remaining);
+                    }
+                })
+        }
     }
 
     return (
-        <Box className="container add-product">
-            <Box className="card my-5 py-5 shadow">
-                <Typography variant='h4' sx={{fontWeight: 'bold'}}>
+        <Container className="container add-product">
+            <Box className="card mb-5 py-5 shadow">
+                <Typography variant='h4' color='success.main' sx={{fontWeight: 'bold'}}>
                     Add a new car
                 </Typography>
                 <hr className='w-25 mx-auto mb-5' />
@@ -71,32 +79,33 @@ const AddProduct = () => {
 
                     <input type="text" {...register("img")} placeholder="Image URL" /> <br />
 
-                    <Button variant='contained' type="submit">Submit</Button> <br />
+                    <Button variant='contained' color='secondary' type="submit">Submit<SendIcon /></Button> <br />
                 </form>
             </Box>
             
             <Box>
-                <Typography variant='h4' sx={{fontWeight: 'bold'}}>
+                <Typography variant='h4' color='secondary' sx={{fontWeight: 'bold'}}>
                     OUR AWESOME LUXURIES CAR
                 </Typography>
 
                 <Typography variant='h5' sx={{ fontWeight: 'bold' }}>
-                    AT NOW WE HAVE {cars.length} CAR
+                    AT NOW WE HAVE <span style={{color: 'blueviolet'}}>{cars.length}</span> CAR
                 </Typography>
                 {
                     cars.map(car =>
-                        <Card sx={{ display: 'flex', my: 3, mx: 2 }}>
+                        <Card className='shadow' sx={{ display: 'flex', my: 3, mx: 2, border: '2px solid gray' }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
-                                    <Typography component="div" variant="h6">
+                                    <Typography sx={{fontWeight: 600}} component="div" variant="h5" color='success.main'>
                                         {car.name}
                                     </Typography>
                                     <Typography variant="subtitle1" color="text.secondary" component="div">
                                         {car.details.slice(0, 150)}...
                                     </Typography>
                                 </CardContent>
-                                <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-                                    <Button onClick={() => handleDelete(car._id)} variant='contained' color='error'>Delete</Button>
+                                <Box sx={{ display: 'flex', pl: 1, pb: 1, mx: 'auto' }}>
+                                    <Button onClick={() => handleDelete(car._id)} variant='contained' color='error'
+                                    ><DeleteForeverIcon />Delete</Button>
                                 </Box>
                             </Box>
                             <CardMedia
@@ -109,7 +118,7 @@ const AddProduct = () => {
                 }
             </Box>
 
-        </Box>
+        </Container>
     );
 };
 

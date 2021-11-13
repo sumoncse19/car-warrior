@@ -6,8 +6,7 @@
 }
 
 .add-product form input, textarea{
-    width: 40%;
-    margin-bottom: 10px;
-    border: 2px solid rgb(216, 183, 34);
+    width: 50%;
+    border: 2px solid rgb(173, 146, 22);
     border-radius: 5px;
 }

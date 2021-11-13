@@ -33,8 +33,8 @@ const Register = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
-                    <Typography variant="body1" gutterBottom>
-                        Register
+                    <Typography variant="h6" color='secondary' sx={{ fontWeight: 600 }} gutterBottom>
+                        Login
                     </Typography>
                     {!isLoading && <form onSubmit={handleLoginSubmit}>
                         <TextField
@@ -79,7 +79,7 @@ const Register = () => {
 
                         <Button
                             sx={{ width: '75%', m: 1 }} variant='contained'
-                            type='submit'
+                            type='submit' color='secondary'
                         >Register</Button>
 
                         <NavLink style={{ textDecoration: 'none' }} to='/login'>
@@ -98,7 +98,7 @@ const Register = () => {
                     }
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    {/* <img style={{ width: '100%' }} src={login} alt="" /> */}
+                    <img style={{ width: '100%' }} src='https://i.ibb.co/K0bMWhy/2853458.jpg' alt="" />
                 </Grid>
             </Grid>
         </Container>
