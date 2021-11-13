@@ -26,7 +26,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
-import ScheduleIcon from '@mui/icons-material/Schedule';
 import HomeIcon from '@mui/icons-material/Home';
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
