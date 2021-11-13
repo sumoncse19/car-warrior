@@ -1,6 +1,5 @@
 import React from 'react';
 import './Contact.css'
-import MapDirection from './MapDirection';
 import { Box, Container, Typography } from '@mui/material';
 
 const Contact = () => {

@@ -27,7 +27,6 @@ import UpdateProduct from './Pages/Dashboard/Admin/ManageProduct/UpdateProduct/U
 import NotFound from './Pages/NotFound/NotFound';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
-import MapDirection from './Pages/Contact/MapDirection';
 
 function App() {
   return (
@@ -54,10 +53,6 @@ function App() {
 
             <Route exact path="/contact">
               <Contact />
-            </Route>
-
-            <Route exact path="/mapbox">
-              <MapDirection />
             </Route>
 
             <Route exact path="/login">

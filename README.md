@@ -29,3 +29,6 @@
     5. From this website one can know about the cost about different types of car.
     6. From this website a user can show our all car & easily can purchase it.
     7. In this website for payment method i use paypal & it's work 100% properly.
+  
+  ### Mobile friendly (full responsive with Material UI):
+    As per the latest statistics, between 51 and 52 percent of all users who are online do so from mobile devices. This means that more than half your prospective customers will be viewing your website on a smaller screen at lower resolutions compared to a computer or a laptop. Your website and all its features should be easily accessible from devices of all screen configurations. Websites that aren’t properly optimized for a smaller screen can contain overlapping elements and features that aren’t visible or usable on a smaller screen. This is the worst experience you could provide to a mobile user. Thankfully, you do not have to pull your hair out trying to make your website mobile-friendly for you. VEVS Car Dealer website builder will do that for you. Every element and feature that VEVS provides is optimized for a wide range of devices, browsers, and screen sizes.
