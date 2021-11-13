@@ -401,6 +401,11 @@ const Navigation = () => {
                 </DrawerHeader>
                 <Divider />
 
+                <Typography variant='h6' color='success.main' sx={{ ml: 1, fontWeight: '600' }}>
+                    DASHBOARD
+                </Typography>
+                <Divider />
+
                 <List sx={{background: drawerBg}}>
                     <ListItem button key='Home' onClick={handleDrawerClose}>
                         <Link to='/home' style={{ textDecoration: 'none', color: 'black', display: 'flex' }}>
