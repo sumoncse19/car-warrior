@@ -301,6 +301,14 @@ const Navigation = () => {
                         <Button variant='h5'>All CAR</Button>
                     </NavLink>
 
+                    <NavLink to='/about' style={{ textDecoration: 'none', color: 'white', fontFamily: "Dongle" }}>
+                        <Button variant='h5'>ABOUT</Button>
+                    </NavLink>
+
+                    <NavLink to='/contact' style={{ textDecoration: 'none', color: 'white', fontFamily: "Dongle" }}>
+                        <Button variant='h5'>CONTACT US</Button>
+                    </NavLink>
+
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Search>

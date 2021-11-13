@@ -25,6 +25,9 @@ import Review from './Pages/Dashboard/User/Review/Review';
 import ManageProduct from './Pages/Dashboard/Admin/ManageProduct/ManageProduct';
 import UpdateProduct from './Pages/Dashboard/Admin/ManageProduct/UpdateProduct/UpdateProduct';
 import NotFound from './Pages/NotFound/NotFound';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
+import MapDirection from './Pages/Contact/MapDirection';
 
 function App() {
   return (
@@ -43,6 +46,18 @@ function App() {
 
             <Route exact path="/allcar">
               <AllCar />
+            </Route>
+
+            <Route exact path="/about">
+              <About />
+            </Route>
+
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+
+            <Route exact path="/mapbox">
+              <MapDirection />
             </Route>
 
             <Route exact path="/login">

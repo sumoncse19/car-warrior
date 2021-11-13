@@ -1,0 +1,27 @@
+.contact:hover{
+    transform: scale(1.05);
+    transition: 2s;
+    background-color: rgb(212, 180, 140);
+}
+
+#map {
+    position:absolute;
+    height: 32%;
+    width: 45%;
+    margin-bottom: 200px;
+}
+
+.contact p strong:hover{
+    color: red;
+}
+
+.get-in-touch:hover{
+    background-color: rgb(212, 180, 140);
+    transition: 3s;
+}
+
+@media only screen and (max-width: 770px){
+    .connect{
+        position:fixed;
+    }
+}
