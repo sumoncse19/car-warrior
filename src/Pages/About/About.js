@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom';
 const About = () => {
     return (
         <Box>
-            <Box>
-                <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/single-girl-on-the-beach-sunset-razvan-ionut-dragomirescu.jpg" alt="" className='img-fluid w-100'/>
-            </Box>
-
             <Container sx={{ mt: 4 }}>
                 <Card sx={{ display: 'flex' }}>
                     <Grid container spacing={2}>

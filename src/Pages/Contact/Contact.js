@@ -1,29 +1,45 @@
 import React from 'react';
 import './Contact.css'
 import MapDirection from './MapDirection';
+import { Box, Container, Typography } from '@mui/material';
 
 const Contact = () => {
     return (
-        <div>
-            <div className='container card my-5 shadow-lg py-5 contact'>
-                <h1 className='fw-bold text-center mb-2'>CONTACT</h1>
-                <div className='text-start ms-5 mt-2'>
-                    <p><strong><i className="fas fa-location-arrow"></i> Location: </strong>7-14, Nikunja Housing Society, South Khulshi, Chittagong.</p>
+        <Box>
+            <Container className='shadow-lg py-5 contact'>
+                <Typography variant='h4' sx={{fontWeight: '600', mx: 'auto', mb: 2}} >CONTACT</Typography>
+                <Box className='text-start ms-5 mt-2'>
+                    <Typography variant='body1' mb={2}>
+                        <strong><i className="fas fa-location-arrow"></i> Location: </strong>7-14, Nikunja Housing Society, South Khulshi, Chittagong.
+                    </Typography>
 
-                    <p><strong><i className="fas fa-map-marked-alt"></i> Permanent Campus: </strong>Plot# S-1, CDA Kolpolok Residential Area, Bakalia, Chittagong.</p>
+                    <Typography variant='body1' mb={2}>
+                        <strong><i className="fas fa-map-marked-alt"></i> Permanent Campus: </strong>Plot# S-1, CDA Kolpolok Residential Area, Bakalia, Chittagong.
+                    </Typography>
 
-                    <p><strong><i className="fas fa-id-card"></i> Contact: </strong>88 031-2869877</p>
+                    <Typography variant='body1' mb={2}>
+                        <strong><i className="fas fa-id-card"></i> Contact: </strong>88 031-2869877
+                    </Typography>
 
-                    <p><strong><i className="fas fa-mobile-alt"></i> Mobile: </strong>01851120791, 01773225500, 01773225511</p>
+                    <Typography variant='body1' mb={2}>
+                        <strong><i className="fas fa-mobile-alt"></i> Mobile: </strong>01851120791, 01773225500, 01773225511
+                    </Typography>
 
-                    <p><strong><i className="fas fa-fax"></i> FAX: </strong>+880312869966</p>
+                    <Typography variant='body1' mb={2}>
+                        <strong><i className="fas fa-fax"></i> FAX: </strong>+880312869966
+                    </Typography>
 
-                    <p><strong><i className="far fa-paper-plane"></i> Email: </strong>admission@sumon.edu.bd</p>
-                </div>
-            </div>
+                    <Typography variant='body1' mb={2}>
+                        <strong><i className="far fa-paper-plane"></i> Email: </strong>admission@sumon.edu.bd
+                    </Typography>
+                </Box>
+            </Container>
 
-            <div className='container card shadow my-5 py-5 get-in-touch'>
-                <h2 className='fw-bold text-center'>Get in Touch with US...</h2>
+            <Container className='shadow my-5 py-5 get-in-touch'>
+                <Typography variant='h4' sx={{fontWeight: 'bold'}}>
+                    Get in Touch with US...
+                </Typography>
+
                 <form className="row g-3 mt-3 px-3">
                     <div className="col-md-4">
                         <label for="validationDefault01" className="form-label">First name</label>
@@ -71,12 +87,12 @@ const Contact = () => {
                         <button className="btn btn-primary" type="submit">Submit form</button>
                     </div>
                 </form>
-            </div>
+            </Container>
 
             <div className="container">
                 {/* <MapDirection></MapDirection> */}
             </div>
-        </div>
+        </Box>
     );
 };
 
