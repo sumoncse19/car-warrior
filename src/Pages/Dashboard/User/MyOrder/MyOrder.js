@@ -16,7 +16,7 @@ const MyOrder = () => {
     const [myOrders, setMyOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user.email}`)
+        fetch(`https://car-warrior-sumon6638.herokuapp.com/myOrders/${user.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data));
     }, [])
@@ -25,7 +25,7 @@ const MyOrder = () => {
         const confirmation = window.confirm('Do you want to delete?');
 
         if (confirmation == true) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://car-warrior-sumon6638.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             }, [])

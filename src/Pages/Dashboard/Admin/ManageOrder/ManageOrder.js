@@ -15,7 +15,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://car-warrior-sumon6638.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [])
@@ -25,7 +25,7 @@ const ManageOrders = () => {
         const confirmation = window.confirm('Do you want to delete?');
 
         if (confirmation == true) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://car-warrior-sumon6638.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             }, [])

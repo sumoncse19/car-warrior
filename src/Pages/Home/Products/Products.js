@@ -9,7 +9,7 @@ const Products = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/productsLimit')
+        fetch('https://car-warrior-sumon6638.herokuapp.com/productsLimit')
             .then(res => res.json())
             .then(data => setCars(data));
     },[])

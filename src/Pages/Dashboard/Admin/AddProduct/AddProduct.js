@@ -19,7 +19,7 @@ const AddProduct = () => {
     const [cars, setCars] = React.useState([]);
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/products', {
+        fetch('https://car-warrior-sumon6638.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -37,7 +37,7 @@ const AddProduct = () => {
     };
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://car-warrior-sumon6638.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setCars(data));
     }, [])
@@ -46,7 +46,7 @@ const AddProduct = () => {
         const confirmation = window.confirm('Do you want to delete?');
 
         if (confirmation == true) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://car-warrior-sumon6638.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -9,7 +9,7 @@ const ManageProduct = () => {
     const [cars, setCars] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://car-warrior-sumon6638.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setCars(data));
     }, [])
@@ -18,7 +18,7 @@ const ManageProduct = () => {
         const confirmation = window.confirm('Do you want to delete?');
 
         if (confirmation == true) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://car-warrior-sumon6638.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
