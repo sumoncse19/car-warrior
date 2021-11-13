@@ -293,8 +293,9 @@ const Navigation = () => {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <NavLink to='/'><img src="./logo.jpg" alt="" style={{ width: '50px' }} /></NavLink>
                     <Typography variant="h6" noWrap component="div">
-                        <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>Car Warrior</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white', marginLeft: '8px' }} to='/'>Car Warrior</Link>
                     </Typography>
                     <NavLink to='/allcar' style={{ textDecoration: 'none', color: 'white', fontFamily: "Dongle" }}>
                         <Button variant='h5'>All CAR</Button>
