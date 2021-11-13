@@ -93,7 +93,7 @@ const AddProduct = () => {
                 </Typography>
                 {
                     cars.map(car =>
-                        <Card className='shadow' sx={{ display: 'flex', my: 3, mx: 2, border: '2px solid gray' }}>
+                        <Card key={car._id} className='shadow' sx={{ display: 'flex', my: 3, mx: 2, border: '2px solid gray' }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
                                     <Typography sx={{fontWeight: 600}} component="div" variant="h5" color='success.main'>

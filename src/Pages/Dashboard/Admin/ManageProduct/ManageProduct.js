@@ -46,7 +46,7 @@ const ManageProduct = () => {
             </Typography>
             {
                 cars.map(car =>
-                    <Card sx={{ display: 'flex', my: 3, mx: 2 }}>
+                    <Card key={car._id} sx={{ display: 'flex', my: 3, mx: 2 }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardContent sx={{ flex: '1 0 auto' }}>
                                 <Typography component="div" variant="h6" color='#e65100' sx={{fontWeight: 'bold'}}>

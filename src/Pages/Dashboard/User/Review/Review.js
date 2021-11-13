@@ -11,7 +11,6 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const { user } = useAuth();
-    console.log(user)
 
     const onSubmit = data => {
         fetch('http://localhost:5000/reviews', {

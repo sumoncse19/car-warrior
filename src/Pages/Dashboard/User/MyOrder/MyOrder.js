@@ -69,7 +69,9 @@ const MyOrder = () => {
                                 <TableCell align="right">{row.email}</TableCell>
                                 <TableCell align="right">{row.address}</TableCell>
                                 <TableCell align="right">{row.status}</TableCell>
-                                <Button variant='contained' onClick={() => handleDelete(row._id)} className="btn bg-danger p-2 ms-3">Delete</Button>
+                                <TableCell>
+                                    <Button variant='contained' onClick={() => handleDelete(row._id)} className="btn bg-danger p-2 ms-3">Delete</Button>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
