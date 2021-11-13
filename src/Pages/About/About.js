@@ -20,7 +20,7 @@ const About = () => {
 
                         <Grid item xs={12} md={7}>
                             <CardContent sx={{ flex: '1 0 auto' }}>
-                                <Typography variant='h5' sx={{ fontWeight: '600' }}>Welcome to the genius way to buy your next car</Typography>
+                                <Typography variant='h5' sx={{ fontWeight: '600', color: 'success.main' }} >Welcome to the genius way to buy your next car</Typography>
                                 <Typography variant="subtitle1" color="text.secondary" component="div">
                                     DriveTime has financed over 4 million people across the country. Our exclusive In-House financing model allows us to provide flexible options for all.
 
@@ -33,7 +33,7 @@ const About = () => {
             </Container>
 
             <Container sx={{mt: 3}}>
-                <Typography align='center' variant='h5' sx={{fontWeight: '600'}}>A Sample Video of Our Collection!!</Typography>
+                <Typography align='center' variant='h5' sx={{ fontWeight: '600', color: 'primary.main'}}>A Sample Video of Our Collection!!</Typography>
                 <iframe className='w-75' height="315" src="https://www.youtube.com/embed/iaxH6R7cnUs?start=64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </Container>
 
@@ -42,7 +42,7 @@ const About = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={7}>
                             <CardContent sx={{ flex: '1 0 auto' }}>
-                                <Typography variant='h5' sx={{ fontWeight: '600' }}>Get a real down payment without ever leaving your home</Typography>
+                                <Typography variant='h5' sx={{ fontWeight: '600', color: 'secondary.main' }}>Get a real down payment without ever leaving your home</Typography>
                                 <Typography variant="subtitle1" color="text.secondary" component="div">
                                     Our industry-leading online auto loan application puts you in the driver's seat with the information you need to make a decision on your next used car purchase. Each online auto loan approval is 100% personalized to you and your credit including required down payment and an enhanced car shopping experience.
 
@@ -63,7 +63,7 @@ const About = () => {
             </Container>
 
             <Container sx={{ my: 4 }}>
-                <Typography variant='h5' sx={{ fontWeight: '600' }}>We are the car-buying and financing revolution</Typography>
+                <Typography variant='h5' sx={{ fontWeight: '600', color: 'success.main' }}>We are the car-buying and financing revolution</Typography>
                 <Grid container spacing={2} align='center' mt={3}>
                     <Grid item xs={12} md={6} >
                         <Card sx={{ maxWidth: 345 }}>
@@ -72,9 +72,10 @@ const About = () => {
                                     component="img"
                                     image="https://www.drivetime.com/assets/img/blue-car-circle.jpg"
                                     alt="green iguana"
+                                    className='w-50'
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
+                                    <Typography gutterBottom variant="h5" component="div" sx={{fontWeight: '600', color: 'secondary.main'}}>
                                         Owning a used car has its benefits when you purchase with us
                                     </Typography>
                                     <Typography variant="body2" color="text.success" align='left' sx={{color: 'success.main'}}>
@@ -95,9 +96,10 @@ const About = () => {
                                     component="img"
                                     image="https://www.drivetime.com/assets/img/dealership-circle.jpg"
                                     alt="green iguana"
+                                    className='w-50'
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
+                                    <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: '600', color: 'secondary.main' }}>
                                         We guarantee you a dealership experience like no other
                                     </Typography>
                                     <Typography variant="body2" color="text.success" align='left' sx={{ color: 'success.main' }}>

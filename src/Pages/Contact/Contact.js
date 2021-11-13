@@ -5,7 +5,7 @@ import { Box, Container, Typography } from '@mui/material';
 
 const Contact = () => {
     return (
-        <Box>
+        <Container>
             <Container className='shadow-lg py-5 contact'>
                 <Typography variant='h4' sx={{fontWeight: '600', mx: 'auto', mb: 2}} >CONTACT</Typography>
                 <Box className='text-start ms-5 mt-2'>
@@ -40,59 +40,57 @@ const Contact = () => {
                     Get in Touch with US...
                 </Typography>
 
-                <form className="row g-3 mt-3 px-3">
-                    <div className="col-md-4">
-                        <label for="validationDefault01" className="form-label">First name</label>
-                        <input type="text" className="form-control" id="validationDefault01" placeholder="Md." required />
-                    </div>
-                    <div className="col-md-4">
-                        <label for="validationDefault02" className="form-label">Last name</label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Sumon" required />
-                    </div>
-                    <div className="col-md-4">
-                        <label for="validationDefaultUsername" className="form-label">Username</label>
-                        <div className="input-group">
-                            <span className="input-group-text" id="inputGroupPrepend2">@</span>
-                            <input type="text" className="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <label for="validationDefault03" className="form-label">City</label>
-                        <input type="text" className="form-control" id="validationDefault03" required />
-                    </div>
-                    <div className="col-md-3">
-                        <label for="validationDefault04" className="form-label">State</label>
-                        <select className="form-select" id="validationDefault04" required>
-                            <option selected disabled value="">Choose...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div className="col-md-3">
-                        <label for="validationDefault05" className="form-label">Zip</label>
-                        <input type="text" className="form-control" id="validationDefault05" required />
-                    </div>
-                    <div className="col-md-12">
-                        <label for="validationDefault05" className="form-label">Your Email</label>
-                        <input type="email" className="form-control" id="validationDefault06" placeholder='@gmail.com' required />
-                    </div>
-                    <div className="col-12">
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
-                            <label className="form-check-label" for="invalidCheck2">
-                                Agree to terms and conditions
-                            </label>
-                        </div>
-                    </div>
-                    <div className="col-12">
-                        <button className="btn btn-primary" type="submit">Submit form</button>
-                    </div>
-                </form>
+                <Box>
+                    <form className="row g-3 mt-3 px-3">
+                        <Box className="col-md-4">
+                            <label for="validationDefault01" className="form-label">First name</label>
+                            <input type="text" className="form-control" id="validationDefault01" placeholder="Md." required />
+                        </Box>
+                        <Box className="col-md-4">
+                            <label for="validationDefault02" className="form-label">Last name</label>
+                            <input type="text" className="form-control" id="validationDefault02" placeholder="Sumon" required />
+                        </Box>
+                        <Box className="col-md-4">
+                            <label for="validationDefaultUsername" className="form-label">Username</label>
+                            <Box className="input-group">
+                                <span className="input-group-text" id="inputGroupPrepend2">@</span>
+                                <input type="text" className="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required />
+                            </Box>
+                        </Box>
+                        <Box className="col-md-6">
+                            <label for="validationDefault03" className="form-label">City</label>
+                            <input type="text" className="form-control" id="validationDefault03" required />
+                        </Box>
+                        <Box className="col-md-3">
+                            <label for="validationDefault04" className="form-label">State</label>
+                            <select className="form-select" id="validationDefault04" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </Box>
+                        <Box className="col-md-3">
+                            <label for="validationDefault05" className="form-label">Zip</label>
+                            <input type="text" className="form-control" id="validationDefault05" required />
+                        </Box>
+                        <Box className="col-md-12">
+                            <label for="validationDefault05" className="form-label">Your Email</label>
+                            <input type="email" className="form-control" id="validationDefault06" placeholder='@gmail.com' required />
+                        </Box>
+                        <Box className="col-12">
+                            <Box className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
+                                <label className="form-check-label" for="invalidCheck2">
+                                    Agree to terms and conditions
+                                </label>
+                            </Box>
+                        </Box>
+                        <Box className="col-12">
+                            <button className="btn btn-primary" type="submit">Submit form</button>
+                        </Box>
+                    </form>
+                </Box>
             </Container>
-
-            <div className="container">
-                {/* <MapDirection></MapDirection> */}
-            </div>
-        </Box>
+        </Container>
     );
 };
 
