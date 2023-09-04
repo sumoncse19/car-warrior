@@ -22,7 +22,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://car-warrior-sumon6638.herokuapp.com/users/admin', {
+        fetch('https://car-warrior-sumoncse19.onrender.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

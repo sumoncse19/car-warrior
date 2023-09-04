@@ -14,7 +14,7 @@ const UpdateProduct = () => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        fetch(`https://car-warrior-sumon6638.herokuapp.com/products/${id}`)
+        fetch(`https://car-warrior-sumoncse19.onrender.com/products/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
@@ -34,7 +34,7 @@ const UpdateProduct = () => {
     }
 
     const handleUpdateProduct = e => {
-        const url = `https://car-warrior-sumon6638.herokuapp.com/products/${id}`
+        const url = `https://car-warrior-sumoncse19.onrender.com/products/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

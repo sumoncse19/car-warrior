@@ -18,7 +18,7 @@ const Blog_Contact = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('https://car-warrior-sumon6638.herokuapp.com/blogs')
+        fetch('https://car-warrior-sumoncse19.onrender.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data));
     }, [])
