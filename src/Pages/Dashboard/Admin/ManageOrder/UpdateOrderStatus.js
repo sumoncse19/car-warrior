@@ -14,7 +14,7 @@ const UpdateOrderStatus = () => {
     const [product, setProduct] = useState({ status: 'Accept' });
 
     useEffect(() => {
-        fetch(`https://car-warrior-sumon6638.herokuapp.com/orders/${id}`)
+        fetch(`https://car-warrior-sumoncse19.onrender.com/orders/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
@@ -27,7 +27,7 @@ const UpdateOrderStatus = () => {
     }
 
     const handleUpdate = e => {
-        fetch(`https://car-warrior-sumon6638.herokuapp.com/orders/${id}`, {
+        fetch(`https://car-warrior-sumoncse19.onrender.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

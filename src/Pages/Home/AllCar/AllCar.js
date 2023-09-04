@@ -14,7 +14,7 @@ const AllCar = () => {
     const [cars, setCars] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('https://car-warrior-sumon6638.herokuapp.com/products')
+        fetch('https://car-warrior-sumoncse19.onrender.com/products')
             .then(res => res.json())
             .then(data => setCars(data));
     }, [])

@@ -28,7 +28,7 @@ const Purchase = () => {
     const [purchaseInfo, setPurchaseInfo] = React.useState(initialInfo);
 
     React.useEffect(() => {
-        fetch(`https://car-warrior-sumon6638.herokuapp.com/products/${purchase}`)
+        fetch(`https://car-warrior-sumoncse19.onrender.com/products/${purchase}`)
             .then(res => res.json())
             .then(data => setCars(data));
     }, [])
@@ -49,7 +49,7 @@ const Purchase = () => {
             status: 'Pending'
         }
 
-        fetch('https://car-warrior-sumon6638.herokuapp.com/purchases', {
+        fetch('https://car-warrior-sumoncse19.onrender.com/purchases', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

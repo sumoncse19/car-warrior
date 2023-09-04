@@ -16,7 +16,7 @@ const Reviews = () => {
     const [reviews, setReviews] = React.useState([])
 
     React.useEffect(() => {
-        fetch('https://car-warrior-sumon6638.herokuapp.com/reviews')
+        fetch('https://car-warrior-sumoncse19.onrender.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
     },[])

@@ -13,7 +13,7 @@ const Review = () => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        fetch('https://car-warrior-sumon6638.herokuapp.com/reviews', {
+        fetch('https://car-warrior-sumoncse19.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
